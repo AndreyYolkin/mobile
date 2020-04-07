@@ -1,0 +1,15 @@
+{
+  "name": "lr1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrey Yolkin",
+  "license": "MIT",
+  "dependencies": {
+    "neat-csv": "^5.2.0"
+  }
+}
