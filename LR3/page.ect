@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Счёт на оплату</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      font-family: Montserrat, Arial, Helvetica, sans-serif;
+      font-style: normal;
+    }
+    td {
+      padding: 0 3vw;
+    }
+    #works td:first-child {
+      text-align: center;
+    }
+    td,
+    th {
+      border: 1px solid black;
+      height: 50px;
+    }
+    table {
+      width: 100%;
+      border-spacing: 0px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <table>
+      <tr>
+        <td style="width: 60%;" rowspan="2" colspan="2">
+          Банк получателя: <%- @bank %>
+        </td>
+        <td style="height: 20px;">БИК</td>
+        <td style="height: 20px; width: 30%; border-bottom: none;">
+          <%- @bik %>
+        </td>
+      </tr>
+      <tr>
+        <td>Сч. №</td>
+        <td style="width: 30%; border-top: none;"><%- @sc1 %></td>
+      </tr>
+      <tr>
+        <td style="height: 20px;">ИНН <%- @inn %></td>
+        <td style="height: 20px;">КПП <%- @kpp %></td>
+        <td rowspan="2">Сч. №</td>
+        <td rowspan="2"><%- @sc2 %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%- @name %><br />Получатель</td>
+      </tr>
+    </table>
+    <h2>Счёт на оплату №<%- @number %> от <%- @date %></h2>
+    <table id="works">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Наименование услуги</th>
+          <th>Сумма</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for link in @links : %>
+        <tr>
+          <td><%= link.index %></td>
+          <td><%= link.name %></td>
+          <td><%= link.cost %>₽</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div style="width: 100%; margin-left: 66%;">
+      <p><b>Итого: <%= @sum %>₽</b></p>
+      <p><b>В том числе, НДС: <%= @nds %>₽</b></p>
+      <p><b>Итого к оплате: <%= @sum %>₽</b></p>
+    </div>
+  </body>
+</html>

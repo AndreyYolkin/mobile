@@ -1,0 +1,19 @@
+{
+  "name": "lr1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "wsl": "wsl nfdump -r nfcapd.202002251200 -o long -q > internet.txt",
+    "linux": "nfdump -r nfcapd.202002251200 -o long -q > internet.txt"
+  },
+  "author": "Andrey Yolkin",
+  "license": "MIT",
+  "dependencies": {
+    "ect": "^0.5.9",
+    "html-pdf": "^2.2.0",
+    "neat-csv": "^5.2.0",
+    "open": "^7.0.3"
+  }
+}
